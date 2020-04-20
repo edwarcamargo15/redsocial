@@ -13,11 +13,11 @@ public class Conexion <T> {
 	private static EntityManager em = null;
 	
 	public Conexion() {
-		em = Conexion.getEm();
+		em = this.getEm();
 	}
 	
 	public Conexion(Class<T> c) {
-		em = Conexion.getEm();
+		em = this.getEm();
 		this.c = c;
 	}
 	
@@ -27,7 +27,7 @@ public class Conexion <T> {
 	
 	public static EntityManager getEm(){
 		if ( em == null ) {
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("Netflix");
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("redsocial");
             em = emf.createEntityManager();
         }
 		return em;
